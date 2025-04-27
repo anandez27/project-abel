@@ -1,4 +1,3 @@
-@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&family=Montserrat:wght@400;500;600&display=swap');
 
 /* Base styles */
 body {
@@ -71,7 +70,6 @@ body {
 
 /* Add sparkle effect */
 .text-box::before {
-    content: '';
     position: absolute;
     top: -50%;
     left: -50%;
@@ -89,7 +87,6 @@ body {
 
 /* Enhanced typography */
 .text-box h1 {
-    font-family: '', cursive;
     background: linear-gradient(45deg, #ff5e78, #ff8396);
     -webkit-background-clip: text;
     background-clip: text;
@@ -250,8 +247,7 @@ body {
 }
 
 /* Add shining effect */
-.text-box::after {
-    content: '';
+.text-box::after 
     position: absolute;
     top: -50%;
     left: -50%;
