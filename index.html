@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Untuk Kamu dari Abel ❤️</title>
+    
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- First page should be visible by default -->
+    <div id="page-1" class="page page-1" style="display: flex;">
+        <div class="content">
+            <div class="text-box" data-time="just now">
+                <div class="ornament-top"></div>
+                <h2>Selamat datang di website paling penting yang pernah saya buat</h2>
+                             Bukan Tokopedia, bukan Shopee, tapi...
+                </p>💖 Cintapedia – tempat saya belanja perasaan buat kamu."
+                </p>
+                <p>
+                </p>
+                <quote>
+                    Aku belajar coding siang malam, bukan buat jadi programmer Google... tapi buat ngoding perasaan aku ke kamu."
+                <div class="ornament-bottom"></div>
+            </div>
+            <button class="btn btn-next" onclick="nextPage(2)">Lanjut</button>
+        </div>
+    </div>
+
+    <!-- Other pages should be hidden -->
+    <div id="page-2" class="page page-2" style="display: none;">
+        <div class="content">
+            <div class="text-box">
+                <h1>Tentang kamu:</h1>
+                <h2>
+                    Nama: [Isi Nama Cewek]
+                </h2>
+                <h2>
+                    Spesies: Manusia (malaikat turun kontrak 99 tahun)
+                </h2>
+                <h2>
+                    Hobi: Senyum-senyum nggak jelas (bikin aku deg-degan)
+                </h2>
+                <quote>
+                    "Kamu itu kayak WiFi, kadang ada sinyal, kadang hilang. Tapi aku tetap nyari sinyal kamu."
+                </quote>
+            </div>
+            <button class="btn btn-next" onclick="nextPage(3)">❤️</button>
+            <button class="btn btn-next" onclick="nextPage(7)">Stop</button>
+        </div>
+    </div>
+
+    <!-- Halaman 3 -->
+    <div id="page-3" class="page page-3" style="display: none;">
+        <div class="content">
+            <div class="text-box">
+                <h2>
+                    Foto-foto yang aku simpan sejak diam-diam suka kamu.
+                    Tapi jangan takut, aku belum masuk tahap creepy kok 😅
+                </h2>
+                <h2>Berikut adalah beberapa foto yang aku ambil dari jauh:</h2>
+                    <img src="foto1.jpg" alt="Foto 1" class="foto">
+                    <img src="foto2.jpg" alt="Foto 2" class="foto">
+                    <img src="foto3.jpg  " alt="Foto 3" class="foto">
+                <q>"Aku nyimpan senyum kamu kayak nyimpan gambar di folder 'wallpaper bagus', padahal isinya cuma kamu semua."</q>
+               
+            </div>
+            <button class="btn btn-next" onclick="nextPage(4)">❤️</button>
+            <button class="btn btn-next" onclick="nextPage(4)">Lanjut</button>
+        
+        </div>
+    </div>
+
+    <!-- Halaman 4: Perasaan -->
+    <div id="page-4" class="page page-4" style="display: none;">
+        <div class="content">
+            <div class="text-box">
+                <h1>Persentase jujurku selama ini:</h1>
+                <h2>Suka kamu: 100%</h2>
+                <h2>Berani ngomong: 0.0000001%</h2>
+                <h2>Tapi sekarang... CPU udah overheat. Waktunya confess</h2>
+            </div>
+            <button class="btn btn-next" onclick="nextPage(5)">💕</button>
+        </div>
+    </div>
+
+    <!-- Halaman 5: Pertanyaan -->
+    <div id="page-5" class="page page-5" style="display: none;">
+        <div class="content">
+            <div class="text-box">
+                <h2>apapun jawaban kamu</h2>
+                
+                <p>Terima kasih udah jadi inspirasi terbesar dalam hidupku.
+                    Tapi jujur aja...</p>
+                
+                <h2>Mau nggak kamu jadi pacarku?</h2>
+            </div>
+            <button class="btn btn-next me-3" onclick="showAnswer(true)">Mau❤️</button>
+            <button class="btn btn-next btn-dodge" onclick="dodgeButton(this)">Pike lok ye</button>
+        </div>
+    </div>
+
+    <!-- Halaman 6: Jawaban -->
+    <div id="page-6" class="page page-6" style="display: none;">
+        <div class="content" id="answer-content">
+            <!-- Konten akan diisi oleh JavaScript -->
+        </div>
+    </div>
+
+    <div id="page-7" class="page page-7" style="display: none;">
+        <div class="content">
+            <div class="text-box">
+                <h1>Hahah Kamu kenak prank</h1>
+                <p>close jek yau</p>
+            </div>
+            
+        </div>
+    </div>
+
+    <!-- Audio dengan kontrol volume -->
+    <div class="audio-controls">
+        <audio id="bgMusic" src="LESUNG_PIPI copy.mp3" loop></audio>
+        <button id="toggleMusic" class="btn btn-sm btn-light">
+            <i class="fas fa-volume-up"></i>
+        </button>
+    </div>
+
+    <!-- Loading screen -->
+    <div id="loading-screen">
+        <div class="loading-content">
+            <div class="spinner-border" role="status">
+                <span class="visually-hidden">Loading...</span>
+            </div>
+            <h3 class="mt-3" style="color: #ff5e78; font-family: 'Great Vibes', cursive;">
+                Tunggu Sebentar...
+            </h3>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    
+    <script src="app.js"></script>
+
+    
+    <!-- Add initialization script at the bottom of body -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const music = document.getElementById('bgMusic');
+            const musicBtn = document.getElementById('toggleMusic');
+            
+            // Add click event to start music
+            document.addEventListener('click', function startMusic() {
+                music.play().then(() => {
+                    musicBtn.innerHTML = '<i class="fas fa-volume-up"></i>';
+                }).catch(err => {
+                    console.log('Music autoplay failed:', err);
+                });
+                // Remove the event listener after first click
+                document.removeEventListener('click', startMusic);
+            });
+
+            // Toggle music button
+            musicBtn.addEventListener('click', function() {
+                if (music.paused) {
+                    music.play();
+                    musicBtn.innerHTML = '<i class="fas fa-volume-up"></i>';
+                } else {
+                    music.pause();
+                    musicBtn.innerHTML = '<i class="fas fa-volume-mute"></i>';
+                }
+            });
+
+            // Show first page
+            document.getElementById('page-1').style.display = 'flex';
+            
+            // Remove loading screen if exists
+            const loadingScreen = document.getElementById('loading-screen');
+            if (loadingScreen) {
+                setTimeout(() => {
+                    loadingScreen.classList.add('fade-out');
+                    setTimeout(() => loadingScreen.remove(), 500);
+                }, 1000);
+            }
+        });
+    </script>
+</body>
+</html>
